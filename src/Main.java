@@ -37,5 +37,35 @@ public class Main {
 
         reader1.printData();
         reader2.printData();
+
+
+        System.out.println("\n Testing Task 3 ");
+
+        // Создаем библиотеку, в которую влезет максимум 5 книг
+        Library myLibrary = new Library(5);
+
+        // Добавляем наши книги из Task 1 в библиотеку
+        myLibrary.addBook(book1);
+        myLibrary.addBook(book2);
+        myLibrary.addBook(book3);
+
+        // Выводим только доступные книги
+        myLibrary.printAvailableBooks();
+
+        // Считаем их
+        int availableCount = myLibrary.countAvailableBooks();
+        System.out.println("Total available books: " + availableCount);
+
+        // Пробуем найти книгу
+        System.out.println("Searching for '1984'...");
+        Book foundBook = myLibrary.findBookByTitle("1984");
+        if (foundBook != null) {
+            System.out.println("Book found!");
+            foundBook.printInfo();
+        } else {
+            System.out.println("Book not found.");
+        }
     }
+
+
 }
