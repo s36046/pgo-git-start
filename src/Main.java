@@ -65,7 +65,31 @@ public class Main {
         } else {
             System.out.println("Book not found.");
         }
-    }
 
 
+        System.out.println("\n Testing Task 4 ");
+
+
+        myLibrary.printAvailableBooks();
+
+
+        System.out.println("\n>>> Action: Reader 1 is trying to borrow '1984'...");
+        myLibrary.borrowBook("1984", reader1);
+
+
+        System.out.println("\n--- State after borrowing ---");
+        myLibrary.printAvailableBooks();
+        reader1.printData();
+
+
+        System.out.println("\n>>> Action: Reader 1 is returning '1984'...");
+        myLibrary.returnBook("1984", reader1);
+
+
+        System.out.println("\n--- Final state ---");
+        myLibrary.printAvailableBooks();
+        reader1.printData();
+
+
+}
 }
